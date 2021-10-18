@@ -6,13 +6,13 @@ import {
   Typography,
   Avatar,
   LinearProgress
-} from '@material-ui/core';
+} from '@mui/material';
 
-import { experimentalStyled } from '@material-ui/core/styles';
-import AssignmentTurnedInTwoToneIcon from '@material-ui/icons/AssignmentTurnedInTwoTone';
-import CancelPresentationTwoToneIcon from '@material-ui/icons/CancelPresentationTwoTone';
+import { styled } from '@mui/material/styles';
+import AssignmentTurnedInTwoToneIcon from '@mui/icons-material/AssignmentTurnedInTwoTone';
+import CancelPresentationTwoToneIcon from '@mui/icons-material/CancelPresentationTwoTone';
 
-const RootWrapper = experimentalStyled(Card)(
+const RootWrapper = styled(Card)(
   ({ theme }) => `
     background: ${theme.colors.gradients.green1};
     color: ${theme.colors.alpha.white[100]};
@@ -23,7 +23,7 @@ const RootWrapper = experimentalStyled(Card)(
 `
 );
 
-const AvatarSuccess = experimentalStyled(Avatar)(
+const AvatarSuccess = styled(Avatar)(
   ({ theme }) => `
       background-color: ${theme.colors.alpha.white[100]};
       color: ${theme.palette.success.contrastText};
@@ -33,7 +33,7 @@ const AvatarSuccess = experimentalStyled(Avatar)(
 `
 );
 
-const AvatarError = experimentalStyled(Avatar)(
+const AvatarError = styled(Avatar)(
   ({ theme }) => `
       background-color: ${theme.colors.error.main};
       color: ${theme.palette.error.contrastText};
@@ -43,13 +43,13 @@ const AvatarError = experimentalStyled(Avatar)(
 `
 );
 
-const TypographySecondary = experimentalStyled(Typography)(
+const TypographySecondary = styled(Typography)(
   ({ theme }) => `
       color: ${theme.colors.alpha.white[70]};
 `
 );
 
-const LinearProgressWrapper = experimentalStyled(LinearProgress)(
+const LinearProgressWrapper = styled(LinearProgress)(
   ({ theme }) => `
         flex-grow: 1;
         margin-right: ${theme.spacing(1)};

@@ -8,19 +8,19 @@ import {
   MenuItem,
   Typography,
   CardContent
-} from '@material-ui/core';
+} from '@mui/material';
 
-import { experimentalStyled } from '@material-ui/core/styles';
-import ExpandMoreTwoToneIcon from '@material-ui/icons/ExpandMoreTwoTone';
+import { styled } from '@mui/material/styles';
+import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
 import TasksAnalyticsChart from './TasksAnalyticsChart';
 
-const TasksAnalyticsChartWrapper = experimentalStyled(TasksAnalyticsChart)(
+const TasksAnalyticsChartWrapper = styled(TasksAnalyticsChart)(
   ({ theme }) => `
         height: 200px;
 `
 );
 
-const DotPrimaryLight = experimentalStyled('span')(
+const DotPrimaryLight = styled('span')(
   ({ theme }) => `
     border-radius: 22px;
     background: ${theme.colors.primary.lighter};
@@ -31,7 +31,7 @@ const DotPrimaryLight = experimentalStyled('span')(
 `
 );
 
-const DotPrimary = experimentalStyled('span')(
+const DotPrimary = styled('span')(
   ({ theme }) => `
     border-radius: 22px;
     background: ${theme.colors.primary.main};
@@ -59,7 +59,8 @@ function TasksAnalytics() {
         'Apr',
         'May',
         'Jun',
-        'Aug',
+'Jul',
+'Aug',
         'Sep',
         'Oct',
         'Nov',

@@ -1,7 +1,5 @@
-import { alpha, createTheme, darken } from '@material-ui/core';
-import '@material-ui/lab/themeAugmentation';
-
-// import i18n from 'src/i18n/i18n';
+import { alpha, createTheme, darken } from '@mui/material';
+import '@mui/lab/themeAugmentation';
 
 const themeColors = {
   primary: '#8C7CF0',
@@ -56,10 +54,10 @@ const colors = {
       menuItemColor: '#9EA4C1',
       menuItemColorActive: '#ffffff',
       menuItemBg: 'transparent',
-      menuItemBgActive: '#2B304D',
+      menuItemBgActive: 'rgba(43, 48, 77, .6)',
       menuItemIconColor: '#444A6B',
       menuItemIconColorActive: '#ffffff',
-      menuItemHeadingColor: themeColors.secondary
+      menuItemHeadingColor: darken(themeColors.secondary, 0.3),
     }
   },
   alpha: {
@@ -324,7 +322,7 @@ export const NebulaFighterTheme = createTheme({
       sm: 600,
       md: 960,
       lg: 1280,
-      xl: 1920
+      xl: 1840
     }
   },
   components: {
@@ -332,9 +330,11 @@ export const NebulaFighterTheme = createTheme({
       styleOverrides: {
         root: {
           backgroundColor: alpha(darken('#070C27', 0.5), 0.4),
+          backdropFilter: 'blur(2px)',
 
           '&.MuiBackdrop-invisible': {
-            backgroundColor: 'transparent'
+            backgroundColor: 'transparent',
+            backdropFilter: 'blur(1px)',
           }
         }
       }
@@ -1063,7 +1063,7 @@ export const NebulaFighterTheme = createTheme({
   },
   typography: {
     fontFamily: [
-      '"Roboto"',
+      '"Inter"',
       '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"'
     ].join(','),
     fontSize: 14,
@@ -1115,7 +1115,7 @@ export const NebulaFighterTheme = createTheme({
     subtitle2: {
       fontWeight: 400,
       fontSize: 15,
-      color: colors.alpha.black[50]
+      color: colors.alpha.black[70]
     },
     overline: {
       fontSize: 13,

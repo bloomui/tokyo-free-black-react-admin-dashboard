@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import PropTypes from 'prop-types';
 import { Bar } from 'react-chartjs-2';
-import { useTheme } from '@material-ui/core';
+import { useTheme } from '@mui/material';
 
 interface TasksAnalyticsChartProps {
   className?: string;
@@ -44,8 +44,7 @@ const TasksAnalyticsChart: FC<TasksAnalyticsChartProps> = ({
     responsive: true,
     maintainAspectRatio: false,
     cornerRadius: 6,
-    animation: false,
-    legend: {
+        legend: {
       display: false
     },
     layout: {

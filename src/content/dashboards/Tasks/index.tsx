@@ -2,7 +2,7 @@ import { ChangeEvent, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageHeader from './PageHeader';
 import Footer from 'src/components/Footer';
-import { Container, Grid, Tab, Tabs } from '@material-ui/core';
+import { Container, Grid, Tab, Tabs } from '@mui/material';
 import PageTitleWrapper from 'src/components/PageTitleWrapper';
 
 import TeamOverview from './TeamOverview';

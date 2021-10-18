@@ -4,25 +4,25 @@ import {
   Container,
   Grid,
   Typography
-} from '@material-ui/core';
+} from '@mui/material';
 
 import { Link as RouterLink } from 'react-router-dom';
 
-import { experimentalStyled } from '@material-ui/core/styles';
+import { styled } from '@mui/material/styles';
 
-const TypographyH1 = experimentalStyled(Typography)(
+const TypographyH1 = styled(Typography)(
   ({ theme }) => `
     font-size: ${theme.typography.pxToRem(50)};
 `
 );
 
-const TypographyH2 = experimentalStyled(Typography)(
+const TypographyH2 = styled(Typography)(
   ({ theme }) => `
     font-size: ${theme.typography.pxToRem(17)};
 `
 );
 
-const LabelWrapper = experimentalStyled(Box)(
+const LabelWrapper = styled(Box)(
   ({ theme }) => `
     background-color: ${theme.colors.success.main};
     color: ${theme.palette.success.contrastText};
@@ -36,7 +36,7 @@ const LabelWrapper = experimentalStyled(Box)(
 `
 );
 
-const MuiAvatar = experimentalStyled(Box)(
+const MuiAvatar = styled(Box)(
   ({ theme }) => `
     width: ${theme.spacing(8)};
     height: ${theme.spacing(8)};
@@ -56,7 +56,7 @@ const MuiAvatar = experimentalStyled(Box)(
 `
 );
 
-const TsAvatar = experimentalStyled(Box)(
+const TsAvatar = styled(Box)(
   ({ theme }) => `
     width: ${theme.spacing(8)};
     height: ${theme.spacing(8)};
@@ -78,12 +78,11 @@ const TsAvatar = experimentalStyled(Box)(
 
 function Hero() {
 
-
   return (
     <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
       <Grid spacing={{ xs: 6, md: 10 }} justifyContent="center" alignItems="center" container>
         <Grid item md={10} lg={8} mx="auto">
-          <LabelWrapper color="success">Version 1.0.0</LabelWrapper>
+          <LabelWrapper color="success">Version 1.1.0</LabelWrapper>
           <TypographyH1 sx={{ mb: 2 }} variant="h1">
             Tokyo Free Black React Admin Dashboard
           </TypographyH1>
@@ -93,7 +92,7 @@ function Hero() {
             color="text.secondary"
             fontWeight="normal"
           >
-            Tokyo Free Black Typescript Dashboard is built using the latest industry standards and features a clean and premium design style, making use of colors and accents to improve the user experience for all included flows and pages.
+            Tokyo Free Black React Admin Dashboard is built using the latest industry standards and features a clean and premium design style, making use of colors and accents to improve the user experience for all included flows and pages.
           </TypographyH2>
           <Button
             component={RouterLink}

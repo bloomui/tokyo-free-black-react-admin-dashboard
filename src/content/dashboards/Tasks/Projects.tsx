@@ -13,24 +13,24 @@ import {
   AvatarGroup,
   LinearProgress,
   Badge
-} from '@material-ui/core';
+} from '@mui/material';
 
-import { experimentalStyled, useTheme } from '@material-ui/core/styles';
-import MoreVertTwoToneIcon from '@material-ui/icons/MoreVertTwoTone';
+import { styled, useTheme } from '@mui/material/styles';
+import MoreVertTwoToneIcon from '@mui/icons-material/MoreVertTwoTone';
 import { Link as RouterLink } from 'react-router-dom';
 import Text from 'src/components/Text';
-import CalendarTodayTwoToneIcon from '@material-ui/icons/CalendarTodayTwoTone';
-import CheckTwoToneIcon from '@material-ui/icons/CheckTwoTone';
-import StarTwoToneIcon from '@material-ui/icons/StarTwoTone';
+import CalendarTodayTwoToneIcon from '@mui/icons-material/CalendarTodayTwoTone';
+import CheckTwoToneIcon from '@mui/icons-material/CheckTwoTone';
+import StarTwoToneIcon from '@mui/icons-material/StarTwoTone';
 
-const AvatarWrapperSuccess = experimentalStyled(Avatar)(
+const AvatarWrapperSuccess = styled(Avatar)(
   ({ theme }) => `
       background-color: ${theme.colors.success.lighter};
       color:  ${theme.colors.success.main};
 `
 );
 
-const DotLegend = experimentalStyled('span')(
+const DotLegend = styled('span')(
   ({ theme }) => `
     border-radius: 22px;
     width: ${theme.spacing(1.8)};
@@ -41,7 +41,7 @@ const DotLegend = experimentalStyled('span')(
 `
 );
 
-const LinearProgressWrapper = experimentalStyled(LinearProgress)(
+const LinearProgressWrapper = styled(LinearProgress)(
   ({ theme }) => `
         flex-grow: 1;
         height: 10px;

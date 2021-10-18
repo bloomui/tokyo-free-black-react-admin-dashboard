@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://bloomui.com" title="BloomUI.com">
-        <img src="https://bloomui.com/static/images/tokyo-logo.png" alt="Tokyo Free Black React Admin Dashboard">
+        <img src="https://bloomui.s3.us-east-2.amazonaws.com/tokyo-logo.png" alt="Tokyo Free Black React Admin Dashboard">
     </a>
 </p>
 <h1 align="center">
@@ -12,11 +12,11 @@
 </h1>
 <div align="center">
 
-![version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![version](https://img.shields.io/badge/version-1.1.0-blue.svg)
 
 </div>
 
-<h3 align="center">Tokyo Free Black Typescript Dashboard is built using the latest industry standards and features a clean and premium design style, making use of colors and accents to improve the user experience for all included flows and pages.
+<h3 align="center">Tokyo Free Black React Admin Dashboard is built using the latest industry standards and features a clean and premium design style, making use of colors and accents to improve the user experience for all included flows and pages.
 </h3>
 
 ---
@@ -37,7 +37,4 @@
 </h2>
 <p>
     Make sure you have the latest stable versions for Node.js and NPM installed. After that, run <code>npm install</code> inside the project-folder and after the install finished, run <code>npm run start</code>. A browser window will open and you will see the live preview.
-</p>
-<p>
-    We recommend browsing through the online documentation we've prepared for Tokyo Free Black React Admin Dashboard.
 </p>

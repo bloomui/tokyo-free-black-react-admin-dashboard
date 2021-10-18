@@ -8,13 +8,13 @@ import {
   Tooltip,
   useTheme,
   LinearProgress
-} from '@material-ui/core';
+} from '@mui/material';
 
-import { experimentalStyled } from '@material-ui/core/styles';
+import { styled } from '@mui/material/styles';
 import { formatDistance, subDays, subMinutes, subHours } from 'date-fns';
 import Text from 'src/components/Text';
 
-const DotLegend = experimentalStyled('span')(
+const DotLegend = styled('span')(
   ({ theme }) => `
     border-radius: 22px;
     width: ${theme.spacing(1.5)};
@@ -25,14 +25,14 @@ const DotLegend = experimentalStyled('span')(
 `
 );
 
-const AvatarWrapper = experimentalStyled(Avatar)(
+const AvatarWrapper = styled(Avatar)(
   ({ theme }) => `
     width: ${theme.spacing(7)};
     height: ${theme.spacing(7)};
 `
 );
 
-const LinearProgressWrapper = experimentalStyled(LinearProgress)(
+const LinearProgressWrapper = styled(LinearProgress)(
   ({ theme }) => `
         flex-grow: 1;
         height: 10px;

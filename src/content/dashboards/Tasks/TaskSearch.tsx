@@ -20,18 +20,16 @@ import {
   InputAdornment,
   Menu,
   MenuItem
-} from '@material-ui/core';
-
-// import { useSnackbar } from 'notistack';
+} from '@mui/material';
 import { formatDistance, subMonths, subDays } from 'date-fns';
-import TodayTwoToneIcon from '@material-ui/icons/TodayTwoTone';
+import TodayTwoToneIcon from '@mui/icons-material/TodayTwoTone';
 import { Link as RouterLink } from 'react-router-dom';
-import SearchTwoToneIcon from '@material-ui/icons/SearchTwoTone';
+import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
 import Text from 'src/components/Text';
-import ExpandMoreTwoToneIcon from '@material-ui/icons/ExpandMoreTwoTone';
-import { experimentalStyled } from '@material-ui/core/styles';
+import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
+import { styled } from '@mui/material/styles';
 
-const OutlinedInputWrapper = experimentalStyled(OutlinedInput)(
+const OutlinedInputWrapper = styled(OutlinedInput)(
   ({ theme }) => `
     background-color: ${theme.colors.alpha.white[100]};
 `
@@ -39,18 +37,12 @@ const OutlinedInputWrapper = experimentalStyled(OutlinedInput)(
 
 function TaskSearch() {
 
-  // const { enqueueSnackbar } = useSnackbar();
-
   const handleDelete = () => {
-    // enqueueSnackbar(t('You clicked on delete!'), {
-    //   variant: 'error'
-    // });
+    
   };
 
   const handleClick = () => {
-    // enqueueSnackbar(t('You clicked on the chip!'), {
-    //   variant: 'success'
-    // });
+    
   };
 
   const periods = [

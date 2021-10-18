@@ -12,11 +12,11 @@ import {
   List,
   Avatar,
   useTheme
-} from '@material-ui/core';
+} from '@mui/material';
 
-import PhoneTwoToneIcon from '@material-ui/icons/PhoneTwoTone';
-import EmailTwoToneIcon from '@material-ui/icons/EmailTwoTone';
-import MessageTwoToneIcon from '@material-ui/icons/MessageTwoTone';
+import PhoneTwoToneIcon from '@mui/icons-material/PhoneTwoTone';
+import EmailTwoToneIcon from '@mui/icons-material/EmailTwoTone';
+import MessageTwoToneIcon from '@mui/icons-material/MessageTwoTone';
 
 function Profile() {
 

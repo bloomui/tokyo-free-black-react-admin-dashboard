@@ -8,21 +8,21 @@ import {
   Checkbox,
   FormGroup,
   Tooltip
-} from '@material-ui/core';
-import Timeline from '@material-ui/lab/Timeline';
-import TimelineItem from '@material-ui/lab/TimelineItem';
-import TimelineSeparator from '@material-ui/lab/TimelineSeparator';
-import TimelineConnector from '@material-ui/lab/TimelineConnector';
-import TimelineContent from '@material-ui/lab/TimelineContent';
-import TimelineDot from '@material-ui/lab/TimelineDot';
+} from '@mui/material';
+import Timeline from '@mui/lab/Timeline';
+import TimelineItem from '@mui/lab/TimelineItem';
+import TimelineSeparator from '@mui/lab/TimelineSeparator';
+import TimelineConnector from '@mui/lab/TimelineConnector';
+import TimelineContent from '@mui/lab/TimelineContent';
+import TimelineDot from '@mui/lab/TimelineDot';
 
-import { experimentalStyled } from '@material-ui/core/styles';
-import RefreshTwoToneIcon from '@material-ui/icons/RefreshTwoTone';
-import AssignmentTwoToneIcon from '@material-ui/icons/AssignmentTwoTone';
-import AccountTreeTwoToneIcon from '@material-ui/icons/AccountTreeTwoTone';
-import BusinessCenterTwoToneIcon from '@material-ui/icons/BusinessCenterTwoTone';
+import { styled } from '@mui/material/styles';
+import RefreshTwoToneIcon from '@mui/icons-material/RefreshTwoTone';
+import AssignmentTwoToneIcon from '@mui/icons-material/AssignmentTwoTone';
+import AccountTreeTwoToneIcon from '@mui/icons-material/AccountTreeTwoTone';
+import BusinessCenterTwoToneIcon from '@mui/icons-material/BusinessCenterTwoTone';
 
-const TimelineWrapper = experimentalStyled(Timeline)(
+const TimelineWrapper = styled(Timeline)(
   ({ theme }) => `
     margin-left: ${theme.spacing(2)};
 
@@ -46,7 +46,7 @@ const TimelineWrapper = experimentalStyled(Timeline)(
 `
 );
 
-const CheckboxWrapper = experimentalStyled(Checkbox)(
+const CheckboxWrapper = styled(Checkbox)(
   ({ theme }) => `
     padding: ${theme.spacing(0.5)};
 `

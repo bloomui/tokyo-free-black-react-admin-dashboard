@@ -6,21 +6,20 @@ import {
   Container,
   Button,
   Grid
-} from '@material-ui/core';
+} from '@mui/material';
 import { Helmet } from 'react-helmet-async';
-import RefreshTwoToneIcon from '@material-ui/icons/RefreshTwoTone';
-import LoadingButton from '@material-ui/lab/LoadingButton';
+import RefreshTwoToneIcon from '@mui/icons-material/RefreshTwoTone';
+import LoadingButton from '@mui/lab/LoadingButton';
 
+import { styled } from '@mui/material/styles';
 
-import { experimentalStyled } from '@material-ui/core/styles';
-
-const GridWrapper = experimentalStyled(Grid)(
+const GridWrapper = styled(Grid)(
   ({ theme }) => `
     background: ${theme.colors.gradients.black1};
 `
 );
 
-const MainContent = experimentalStyled(Box)(
+const MainContent = styled(Box)(
   () => `
     height: 100%;
     display: flex;
@@ -32,20 +31,19 @@ const MainContent = experimentalStyled(Box)(
 `
 );
 
-const TypographyPrimary = experimentalStyled(Typography)(
+const TypographyPrimary = styled(Typography)(
   ({ theme }) => `
       color: ${theme.colors.alpha.white[100]};
 `
 );
 
-const TypographySecondary = experimentalStyled(Typography)(
+const TypographySecondary = styled(Typography)(
   ({ theme }) => `
       color: ${theme.colors.alpha.white[70]};
 `
 );
 
 function Status500() {
-
 
   const [pending, setPending] = useState(false);
   function handleClick() {
@@ -124,7 +122,7 @@ function Status500() {
                     fontWeight="normal"
                     sx={{ mb: 4 }}
                   >
-                    Tokyo Free Black Typescript Dashboard is built using the latest industry standards and features a clean and premium design style, making use of colors and accents to improve the user experience for all included flows and pages.
+                    Tokyo Free Black React Admin Dashboard is built using the latest industry standards and features a clean and premium design style, making use of colors and accents to improve the user experience for all included flows and pages.
                   </TypographySecondary>
                   <Button
                     href="/overview"
