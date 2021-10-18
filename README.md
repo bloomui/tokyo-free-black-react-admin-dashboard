@@ -46,11 +46,7 @@ To discover all the features that this free React admin template has to offer, w
     <li>Make sure you have the latest stable versions for Node.js and NPM installed</li>
     <li>Clone repository: <code>git clone https://github.com/bloomui/tokyo-free-black-react-admin-dashboard.git</code></li>
     <li>Install dependencies: Run <code>npm install</code> inside the project folder</li>
-<<<<<<< HEAD
-    <li>Start dev server: After the install finishes, run <code>npm run start</code>. A browser window will open on http://localhost:3000 where you'll see the live preview</li>
-=======
     <li>Start dev server: After the install finishes, run <code>npm run start</code>. A browser window will open on http://localhost:3000 where you''ll see the live preview</li>
->>>>>>> 2b1990f711a990a57ee9da4778f64a6f67572760
 </ol>
 
 ---
@@ -62,8 +58,4 @@ To discover all the features that this free React admin template has to offer, w
     You can open a support ticket by sending an email here: <a href="mailto:support@bloomui.freshdesk.com" title="Open Support Ticket">
         support@bloomui.freshdesk.com
     </a>
-<<<<<<< HEAD
 </p>
-=======
-</p>
->>>>>>> 2b1990f711a990a57ee9da4778f64a6f67572760
