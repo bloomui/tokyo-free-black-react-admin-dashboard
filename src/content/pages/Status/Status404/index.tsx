@@ -7,12 +7,11 @@ import {
   Button,
   FormControl,
   OutlinedInput,
-  InputAdornment
+  InputAdornment,
+  styled
 } from '@mui/material';
 import { Helmet } from 'react-helmet-async';
 import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
-
-import { styled } from '@mui/material/styles';
 
 const MainContent = styled(Box)(
   ({ theme }) => `
