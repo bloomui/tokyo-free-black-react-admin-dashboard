@@ -15,11 +15,10 @@ const OverviewWrapper = styled(Box)(
 );
 
 function Overview() {
-
   return (
     <OverviewWrapper>
       <Helmet>
-        <title>Tokyo Free Black React Admin Dashboard</title>
+        <title>Tokyo Free Black React Typescript Admin Dashboard</title>
       </Helmet>
       <Container maxWidth="lg">
         <Box display="flex" justifyContent="center" py={5} alignItems="center">

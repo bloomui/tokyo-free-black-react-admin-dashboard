@@ -2,13 +2,12 @@ import {
   Card,
   Box,
   CardContent,
-  CardHeader,
   Typography,
   Avatar,
-  LinearProgress
+  useTheme,
+  LinearProgress,
+  styled
 } from '@mui/material';
-
-import { styled } from '@mui/material/styles';
 import AssignmentTurnedInTwoToneIcon from '@mui/icons-material/AssignmentTurnedInTwoTone';
 import CancelPresentationTwoToneIcon from '@mui/icons-material/CancelPresentationTwoTone';
 
@@ -16,10 +15,6 @@ const RootWrapper = styled(Card)(
   ({ theme }) => `
     background: ${theme.colors.gradients.green1};
     color: ${theme.colors.alpha.white[100]};
-    
-    .MuiCardHeader-title {
-      color: ${theme.colors.alpha.white[100]};
-    }
 `
 );
 
@@ -65,17 +60,41 @@ const LinearProgressWrapper = styled(LinearProgress)(
 );
 
 function Performance() {
-  
+  const theme = useTheme();
 
   return (
-    <RootWrapper sx={{ p: 1 }}>
-      <CardHeader
-        title="Performance"
-        titleTypographyProps={{ variant: 'h3' }}
-      />
+    <RootWrapper
+      sx={{
+        p: 2
+      }}
+    >
+      <Typography
+        variant="h3"
+        sx={{
+          px: 2,
+          pb: 1,
+          pt: 2,
+          fontSize: `${theme.typography.pxToRem(23)}`,
+          color: `${theme.colors.alpha.white[100]}`
+        }}
+      >
+        Performance
+      </Typography>
       <CardContent>
-        <Box display="flex" sx={{ px: 2, pb: 3 }} alignItems="center">
-          <AvatarSuccess sx={{ mr: 2 }} variant="rounded">
+        <Box
+          display="flex"
+          sx={{
+            px: 2,
+            pb: 3
+          }}
+          alignItems="center"
+        >
+          <AvatarSuccess
+            sx={{
+              mr: 2
+            }}
+            variant="rounded"
+          >
             <AssignmentTurnedInTwoToneIcon fontSize="large" />
           </AvatarSuccess>
           <Box>
@@ -85,8 +104,20 @@ function Performance() {
             </TypographySecondary>
           </Box>
         </Box>
-        <Box display="flex" sx={{ px: 2, pb: 3 }} alignItems="center">
-          <AvatarError sx={{ mr: 2 }} variant="rounded">
+        <Box
+          display="flex"
+          sx={{
+            px: 2,
+            pb: 3
+          }}
+          alignItems="center"
+        >
+          <AvatarError
+            sx={{
+              mr: 2
+            }}
+            variant="rounded"
+          >
             <CancelPresentationTwoToneIcon fontSize="large" />
           </AvatarError>
           <Box>

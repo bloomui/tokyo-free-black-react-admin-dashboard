@@ -1,10 +1,7 @@
 import {
   Button,
-  Card,
-  Box,
-  CardContent,
   CardHeader,
-  CardActions,
+  Box,
   Grid,
   Typography,
   Avatar,
@@ -12,10 +9,10 @@ import {
   Tooltip,
   AvatarGroup,
   LinearProgress,
-  Badge
+  Badge,
+  styled,
+  useTheme
 } from '@mui/material';
-
-import { styled, useTheme } from '@mui/material/styles';
 import MoreVertTwoToneIcon from '@mui/icons-material/MoreVertTwoTone';
 import { Link as RouterLink } from 'react-router-dom';
 import Text from 'src/components/Text';
@@ -45,6 +42,7 @@ const LinearProgressWrapper = styled(LinearProgress)(
   ({ theme }) => `
         flex-grow: 1;
         height: 10px;
+        margin: ${theme.spacing(1, 0, 2)};
         
         &.MuiLinearProgress-root {
           background-color: ${theme.colors.alpha.black[10]};
@@ -57,7 +55,6 @@ const LinearProgressWrapper = styled(LinearProgress)(
 );
 
 function Projects() {
-
   const theme = useTheme();
 
   return (
@@ -66,7 +63,9 @@ function Projects() {
         display="flex"
         alignItems="center"
         justifyContent="space-between"
-        sx={{ pb: 3 }}
+        sx={{
+          pb: 3
+        }}
       >
         <Typography variant="h3">Projects</Typography>
         <Box>
@@ -75,13 +74,17 @@ function Projects() {
           </Button>
         </Box>
       </Box>
-      <Grid container spacing={3}>
+      <Grid container spacing={4}>
         <Grid item xs={12} md={4}>
-          <Card>
+          <Box>
             <CardHeader
+              sx={{
+                px: 0,
+                pt: 0
+              }}
               avatar={
                 <AvatarWrapperSuccess>
-                  <CheckTwoToneIcon fontSize="medium" />
+                  <CheckTwoToneIcon />
                 </AvatarWrapperSuccess>
               }
               action={
@@ -95,23 +98,21 @@ function Projects() {
                 color: 'textPrimary'
               }}
             />
-            <CardContent sx={{ pt: 0, pb: 1 }}>
-              <Box>
-                <Typography variant="subtitle2" gutterBottom>
-                  Tasks done:{' '}
-                  <Text color="black">
-                    <b>25</b>
-                  </Text>
-                  <b> /100</b>
-                </Typography>
-                <LinearProgressWrapper
-                  value={25}
-                  color="primary"
-                  variant="determinate"
-                />
-              </Box>
-            </CardContent>
-            <CardActions
+            <Box>
+              <Typography variant="subtitle2" gutterBottom>
+                Tasks done:{' '}
+                <Text color="black">
+                  <b>25</b>
+                </Text>
+                <b> /100</b>
+              </Typography>
+              <LinearProgressWrapper
+                value={25}
+                color="primary"
+                variant="determinate"
+              />
+            </Box>
+            <Box
               sx={{
                 display: 'flex',
                 alignItems: 'center',
@@ -121,7 +122,10 @@ function Projects() {
               <AvatarGroup>
                 <Tooltip arrow title="View profile for Remy Sharp">
                   <Avatar
-                    sx={{ width: 30, height: 30 }}
+                    sx={{
+                      width: 30,
+                      height: 30
+                    }}
                     component={RouterLink}
                     to="#"
                     alt="Remy Sharp"
@@ -130,7 +134,10 @@ function Projects() {
                 </Tooltip>
                 <Tooltip arrow title="View profile for Travis Howard">
                   <Avatar
-                    sx={{ width: 30, height: 30 }}
+                    sx={{
+                      width: 30,
+                      height: 30
+                    }}
                     component={RouterLink}
                     to="#"
                     alt="Travis Howard"
@@ -139,7 +146,10 @@ function Projects() {
                 </Tooltip>
                 <Tooltip arrow title="View profile for Cindy Baker">
                   <Avatar
-                    sx={{ width: 30, height: 30 }}
+                    sx={{
+                      width: 30,
+                      height: 30
+                    }}
                     component={RouterLink}
                     to="#"
                     alt="Cindy Baker"
@@ -148,7 +158,10 @@ function Projects() {
                 </Tooltip>
                 <Tooltip arrow title="View profile for Agnes Walker">
                   <Avatar
-                    sx={{ width: 30, height: 30 }}
+                    sx={{
+                      width: 30,
+                      height: 30
+                    }}
                     component={RouterLink}
                     to="#"
                     alt="Agnes Walker"
@@ -157,7 +170,10 @@ function Projects() {
                 </Tooltip>
                 <Tooltip arrow title="View profile for Trevor Henderson">
                   <Avatar
-                    sx={{ width: 30, height: 30 }}
+                    sx={{
+                      width: 30,
+                      height: 30
+                    }}
                     component={RouterLink}
                     to="#"
                     alt="Trevor Henderson"
@@ -166,12 +182,14 @@ function Projects() {
                 </Tooltip>
               </AvatarGroup>
               <Box>
-                <Tooltip
-                  arrow
-                  title="View project calendar"
-                  placement="top"
-                >
-                  <IconButton size="small" color="secondary" sx={{ ml: 0.5 }}>
+                <Tooltip arrow title="View project calendar" placement="top">
+                  <IconButton
+                    size="small"
+                    color="secondary"
+                    sx={{
+                      ml: 0.5
+                    }}
+                  >
                     <CalendarTodayTwoToneIcon fontSize="small" />
                   </IconButton>
                 </Tooltip>
@@ -182,20 +200,31 @@ function Projects() {
                 >
                   <IconButton
                     size="small"
-                    sx={{ color: `${theme.colors.warning.main}`, ml: 0.5 }}
+                    sx={{
+                      color: `${theme.colors.warning.main}`,
+                      ml: 0.5
+                    }}
                   >
                     <StarTwoToneIcon fontSize="small" />
                   </IconButton>
                 </Tooltip>
-              </Box >
-            </CardActions >
-          </Card >
-        </Grid >
+              </Box>
+            </Box>
+          </Box>
+        </Grid>
         <Grid item xs={12} md={4}>
-          <Card>
+          <Box>
             <CardHeader
+              sx={{
+                px: 0,
+                pt: 0
+              }}
               avatar={
-                <Avatar sx={{ background: `${theme.colors.gradients.blue1}` }}>
+                <Avatar
+                  sx={{
+                    background: `${theme.colors.gradients.blue1}`
+                  }}
+                >
                   RP
                 </Avatar>
               }
@@ -210,23 +239,21 @@ function Projects() {
                 color: 'textPrimary'
               }}
             />
-            <CardContent sx={{ pt: 0, pb: 1 }}>
-              <Box>
-                <Typography variant="subtitle2" gutterBottom>
-                  Tasks done:{' '}
-                  <Text color="black">
-                    <b>80</b>
-                  </Text>
-                  <b> /100</b>
-                </Typography>
-                <LinearProgressWrapper
-                  value={80}
-                  color="primary"
-                  variant="determinate"
-                />
-              </Box>
-            </CardContent >
-            <CardActions
+            <Box>
+              <Typography variant="subtitle2" gutterBottom>
+                Tasks done:{' '}
+                <Text color="black">
+                  <b>80</b>
+                </Text>
+                <b> /100</b>
+              </Typography>
+              <LinearProgressWrapper
+                value={80}
+                color="primary"
+                variant="determinate"
+              />
+            </Box>
+            <Box
               sx={{
                 display: 'flex',
                 alignItems: 'center',
@@ -236,7 +263,10 @@ function Projects() {
               <AvatarGroup>
                 <Tooltip arrow title="View profile for Remy Sharp">
                   <Avatar
-                    sx={{ width: 30, height: 30 }}
+                    sx={{
+                      width: 30,
+                      height: 30
+                    }}
                     component={RouterLink}
                     to="#"
                     alt="Remy Sharp"
@@ -245,33 +275,38 @@ function Projects() {
                 </Tooltip>
                 <Tooltip arrow title="View profile for Travis Howard">
                   <Avatar
-                    sx={{ width: 30, height: 30 }}
+                    sx={{
+                      width: 30,
+                      height: 30
+                    }}
                     component={RouterLink}
                     to="#"
                     alt="Travis Howard"
                     src="/static/images/avatars/3.jpg"
                   />
                 </Tooltip>
-                <Tooltip
-                  arrow
-                  title="View profile for Trevor Henderson"
-                >
+                <Tooltip arrow title="View profile for Trevor Henderson">
                   <Avatar
-                    sx={{ width: 30, height: 30 }}
+                    sx={{
+                      width: 30,
+                      height: 30
+                    }}
                     component={RouterLink}
                     to="#"
                     alt="Trevor Henderson"
                     src="/static/images/avatars/1.jpg"
                   />
-                </Tooltip >
-              </AvatarGroup >
+                </Tooltip>
+              </AvatarGroup>
               <Box>
-                <Tooltip
-                  arrow
-                  title="View project calendar"
-                  placement="top"
-                >
-                  <IconButton size="small" color="secondary" sx={{ ml: 0.5 }}>
+                <Tooltip arrow title="View project calendar" placement="top">
+                  <IconButton
+                    size="small"
+                    color="secondary"
+                    sx={{
+                      ml: 0.5
+                    }}
+                  >
                     <CalendarTodayTwoToneIcon fontSize="small" />
                   </IconButton>
                 </Tooltip>
@@ -282,18 +317,25 @@ function Projects() {
                 >
                   <IconButton
                     size="small"
-                    sx={{ color: `${theme.colors.warning.main}`, ml: 0.5 }}
+                    sx={{
+                      color: `${theme.colors.warning.main}`,
+                      ml: 0.5
+                    }}
                   >
                     <StarTwoToneIcon fontSize="small" />
                   </IconButton>
-                </Tooltip >
-              </Box >
-            </CardActions >
-          </Card >
-        </Grid >
+                </Tooltip>
+              </Box>
+            </Box>
+          </Box>
+        </Grid>
         <Grid item xs={12} md={4}>
-          <Card>
+          <Box>
             <CardHeader
+              sx={{
+                px: 0,
+                pt: 0
+              }}
               avatar={
                 <Badge
                   anchorOrigin={{
@@ -302,11 +344,7 @@ function Projects() {
                   }}
                   overlap="circular"
                   badgeContent={
-                    <Tooltip
-                      arrow
-                      placement="top"
-                      title="Online right now"
-                    >
+                    <Tooltip arrow placement="top" title="Online right now">
                       <DotLegend
                         style={{ background: `${theme.colors.success.main}` }}
                       />
@@ -327,23 +365,21 @@ function Projects() {
                 color: 'textPrimary'
               }}
             />
-            <CardContent sx={{ pt: 0, pb: 1 }}>
-              <Box>
-                <Typography variant="subtitle2" gutterBottom>
-                  Tasks done:{' '}
-                  <Text color="black">
-                    <b>87</b>
-                  </Text>
-                  <b> /100</b>
-                </Typography>
-                <LinearProgressWrapper
-                  value={87}
-                  color="primary"
-                  variant="determinate"
-                />
-              </Box>
-            </CardContent>
-            <CardActions
+            <Box>
+              <Typography variant="subtitle2" gutterBottom>
+                Tasks done:{' '}
+                <Text color="black">
+                  <b>87</b>
+                </Text>
+                <b> /100</b>
+              </Typography>
+              <LinearProgressWrapper
+                value={87}
+                color="primary"
+                variant="determinate"
+              />
+            </Box>
+            <Box
               sx={{
                 display: 'flex',
                 alignItems: 'center',
@@ -353,7 +389,10 @@ function Projects() {
               <AvatarGroup>
                 <Tooltip arrow title="View profile for Remy Sharp">
                   <Avatar
-                    sx={{ width: 30, height: 30 }}
+                    sx={{
+                      width: 30,
+                      height: 30
+                    }}
                     component={RouterLink}
                     to="#"
                     alt="Remy Sharp"
@@ -362,7 +401,10 @@ function Projects() {
                 </Tooltip>
                 <Tooltip arrow title="View profile for Cindy Baker">
                   <Avatar
-                    sx={{ width: 30, height: 30 }}
+                    sx={{
+                      width: 30,
+                      height: 30
+                    }}
                     component={RouterLink}
                     to="#"
                     alt="Cindy Baker"
@@ -371,33 +413,38 @@ function Projects() {
                 </Tooltip>
                 <Tooltip arrow title="View profile for Agnes Walker">
                   <Avatar
-                    sx={{ width: 30, height: 30 }}
+                    sx={{
+                      width: 30,
+                      height: 30
+                    }}
                     component={RouterLink}
                     to="#"
                     alt="Agnes Walker"
                     src="/static/images/avatars/2.jpg"
                   />
                 </Tooltip>
-                <Tooltip
-                  arrow
-                  title="View profile for Trevor Henderson"
-                >
+                <Tooltip arrow title="View profile for Trevor Henderson">
                   <Avatar
-                    sx={{ width: 30, height: 30 }}
+                    sx={{
+                      width: 30,
+                      height: 30
+                    }}
                     component={RouterLink}
                     to="#"
                     alt="Trevor Henderson"
                     src="/static/images/avatars/4.jpg"
                   />
-                </Tooltip >
-              </AvatarGroup >
+                </Tooltip>
+              </AvatarGroup>
               <Box>
-                <Tooltip
-                  arrow
-                  title="View project calendar"
-                  placement="top"
-                >
-                  <IconButton size="small" color="secondary" sx={{ ml: 0.5 }}>
+                <Tooltip arrow title="View project calendar" placement="top">
+                  <IconButton
+                    size="small"
+                    color="secondary"
+                    sx={{
+                      ml: 0.5
+                    }}
+                  >
                     <CalendarTodayTwoToneIcon fontSize="small" />
                   </IconButton>
                 </Tooltip>
@@ -408,16 +455,19 @@ function Projects() {
                 >
                   <IconButton
                     size="small"
-                    sx={{ color: `${theme.colors.warning.main}`, ml: 0.5 }}
+                    sx={{
+                      color: `${theme.colors.warning.main}`,
+                      ml: 0.5
+                    }}
                   >
                     <StarTwoToneIcon fontSize="small" />
                   </IconButton>
-                </Tooltip >
-              </Box >
-            </CardActions >
-          </Card >
-        </Grid >
-      </Grid >
+                </Tooltip>
+              </Box>
+            </Box>
+          </Box>
+        </Grid>
+      </Grid>
     </>
   );
 }

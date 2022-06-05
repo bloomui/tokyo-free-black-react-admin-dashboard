@@ -44,7 +44,6 @@ const TypographySecondary = styled(Typography)(
 );
 
 function Status500() {
-
   const [pending, setPending] = useState(false);
   function handleClick() {
     setPending(true);
@@ -86,7 +85,8 @@ function Status500() {
                   fontWeight="normal"
                   sx={{ mb: 4 }}
                 >
-                  The server encountered an internal error and was not able to complete your request
+                  The server encountered an internal error and was not able to
+                  complete your request
                 </Typography>
                 <LoadingButton
                   onClick={handleClick}
@@ -115,20 +115,18 @@ function Status500() {
               <Container maxWidth="sm">
                 <Box textAlign="center">
                   <TypographyPrimary variant="h1" sx={{ my: 2 }}>
-                    Tokyo Free Black React Admin Dashboard
+                    Tokyo Free Black React Typescript Admin Dashboard
                   </TypographyPrimary>
                   <TypographySecondary
                     variant="h4"
                     fontWeight="normal"
                     sx={{ mb: 4 }}
                   >
-                    Tokyo Free Black React Admin Dashboard is built using the latest industry standards and features a clean and premium design style, making use of colors and accents to improve the user experience for all included flows and pages.
+                    High performance React template built with lots of powerful
+                    Material-UI components across multiple product niches for
+                    fast &amp; perfect apps development processes.
                   </TypographySecondary>
-                  <Button
-                    href="/overview"
-                    size="large"
-                    variant="contained"
-                  >
+                  <Button href="/overview" size="large" variant="contained">
                     Overview
                   </Button>
                 </Box>

@@ -58,9 +58,8 @@ const ButtonNotify = styled(Button)(
 );
 
 function StatusComingSoon() {
-
   const calculateTimeLeft = () => {
-    const difference = +new Date(`2022`) - +new Date();
+    const difference = +new Date(`2023`) - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {
@@ -117,7 +116,8 @@ function StatusComingSoon() {
                 fontWeight="normal"
                 sx={{ mb: 4 }}
               >
-                We're working on implementing the last features before our launch!
+                We're working on implementing the last features before our
+                launch!
               </Typography>
             </Container>
             <img

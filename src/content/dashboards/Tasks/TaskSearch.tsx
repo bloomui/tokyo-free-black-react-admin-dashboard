@@ -4,7 +4,6 @@ import {
   Card,
   Grid,
   Box,
-  CardContent,
   FormControl,
   CardActions,
   Typography,
@@ -19,7 +18,9 @@ import {
   Pagination,
   InputAdornment,
   Menu,
-  MenuItem
+  MenuItem,
+  styled,
+  useTheme
 } from '@mui/material';
 import { formatDistance, subMonths, subDays } from 'date-fns';
 import TodayTwoToneIcon from '@mui/icons-material/TodayTwoTone';
@@ -27,23 +28,20 @@ import { Link as RouterLink } from 'react-router-dom';
 import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
 import Text from 'src/components/Text';
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
-import { styled } from '@mui/material/styles';
 
 const OutlinedInputWrapper = styled(OutlinedInput)(
   ({ theme }) => `
     background-color: ${theme.colors.alpha.white[100]};
+    padding-right: ${theme.spacing(0.7)}
 `
 );
 
 function TaskSearch() {
+  const theme = useTheme();
 
-  const handleDelete = () => {
-    
-  };
+  const handleDelete = () => {};
 
-  const handleClick = () => {
-    
-  };
+  const handleClick = () => {};
 
   const periods = [
     {
@@ -103,7 +101,12 @@ function TaskSearch() {
           </Typography>
         </Box>
         <Box display="flex" alignItems="center">
-          <Typography variant="subtitle2" sx={{ pr: 1 }}>
+          <Typography
+            variant="subtitle2"
+            sx={{
+              pr: 1
+            }}
+          >
             Sort by:
           </Typography>
           <Button
@@ -116,10 +119,10 @@ function TaskSearch() {
             {period}
           </Button>
           <Menu
+            disableScrollLock
             anchorEl={actionRef1.current}
             onClose={() => setOpenMenuPeriod(false)}
             open={openPeriod}
-
             anchorOrigin={{
               vertical: 'bottom',
               horizontal: 'right'
@@ -145,45 +148,65 @@ function TaskSearch() {
       </Box>
       <Grid container spacing={3}>
         <Grid item xs={12} md={4}>
-          <Card>
-            <CardContent>
-              <Box>
-                <Rating value={4} defaultValue={5} precision={1} readOnly />
-              </Box>
-              <Link href="#" variant="h3" color="text.primary" underline="hover">
-                Migrate hosting to a more performant web server datacenter
-              </Link>
-              <Box sx={{ py: 2 }}>
-                <Chip
-                  sx={{ mr: 0.5 }}
-                  size="small"
-                  label="Website"
-                  color="secondary"
-                  onClick={handleClick}
-                  onDelete={handleDelete}
-                />
-                <Chip
-                  sx={{ mr: 0.5 }}
-                  size="small"
-                  label="Integrations"
-                  color="secondary"
-                  onClick={handleClick}
-                  onDelete={handleDelete}
-                />
-              </Box>
-              <Typography sx={{ pb: 2 }} color="text.secondary">
-                It is a long established fact that a reader will be distracted
-                by the readable content of a page when looking at its layout
-                beatae vitae dicta sunt explicabo.
-              </Typography>
-              <Button size="small" variant="contained">
-                View task
-              </Button>
-            </CardContent>
-            <Divider />
+          <Card
+            variant="outlined"
+            sx={{
+              p: 3,
+              background: `${theme.colors.alpha.black[5]}`
+            }}
+          >
+            <Box>
+              <Rating value={4} defaultValue={5} precision={1} readOnly />
+            </Box>
+            <Link href="#" variant="h3" color="text.primary">
+              Migrate hosting to a more performant web server datacenter
+            </Link>
+            <Box
+              sx={{
+                py: 2
+              }}
+            >
+              <Chip
+                sx={{
+                  mr: 0.5
+                }}
+                size="small"
+                label="Website"
+                color="secondary"
+                onClick={handleClick}
+                onDelete={handleDelete}
+              />
+              <Chip
+                sx={{
+                  mr: 0.5
+                }}
+                size="small"
+                label="Integrations"
+                color="secondary"
+                onClick={handleClick}
+                onDelete={handleDelete}
+              />
+            </Box>
+            <Typography
+              sx={{
+                pb: 2
+              }}
+              color="text.secondary"
+            >
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout beatae
+              vitae dicta sunt explicabo.
+            </Typography>
+            <Button size="small" variant="contained">
+              View task
+            </Button>
+            <Divider
+              sx={{
+                my: 2
+              }}
+            />
             <CardActions
               sx={{
-                p: 2,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between'
@@ -194,27 +217,34 @@ function TaskSearch() {
                 alignItems="center"
                 variant="subtitle2"
               >
-                <TodayTwoToneIcon sx={{ mr: 1 }} />
+                <TodayTwoToneIcon
+                  sx={{
+                    mr: 1
+                  }}
+                />
                 {formatDistance(subDays(new Date(), 24), new Date(), {
                   addSuffix: true
                 })}
               </Typography>
               <AvatarGroup>
-                <Tooltip arrow title="View profile for Remy Sharp">
+                <Tooltip arrow title={`$"View profile for')} Remy Sharp`}>
                   <Avatar
-                    sx={{ width: 30, height: 30 }}
+                    sx={{
+                      width: 30,
+                      height: 30
+                    }}
                     component={RouterLink}
                     to="#"
                     alt="Remy Sharp"
                     src="/static/images/avatars/3.jpg"
                   />
                 </Tooltip>
-                <Tooltip
-                  arrow
-                  title="View profile for Trevor Henderson"
-                >
+                <Tooltip arrow title="View profile for Trevor Henderson">
                   <Avatar
-                    sx={{ width: 30, height: 30 }}
+                    sx={{
+                      width: 30,
+                      height: 30
+                    }}
                     component={RouterLink}
                     to="#"
                     alt="Trevor Henderson"
@@ -226,45 +256,65 @@ function TaskSearch() {
           </Card>
         </Grid>
         <Grid item xs={12} md={4}>
-          <Card>
-            <CardContent>
-              <Box>
-                <Rating value={4} defaultValue={5} precision={1} readOnly />
-              </Box>
-              <Link href="#" variant="h3" color="text.primary" underline="hover">
-                Improve conversion rated by integrating new analytics tools
-              </Link>
-              <Box sx={{ py: 2 }}>
-                <Chip
-                  sx={{ mr: 0.5 }}
-                  size="small"
-                  label="Website"
-                  color="secondary"
-                  onClick={handleClick}
-                  onDelete={handleDelete}
-                />
-                <Chip
-                  sx={{ mr: 0.5 }}
-                  size="small"
-                  label="Integrations"
-                  color="secondary"
-                  onClick={handleClick}
-                  onDelete={handleDelete}
-                />
-              </Box>
-              <Typography sx={{ pb: 2 }} color="text.secondary">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae ab illo.
-              </Typography>
-              <Button size="small" variant="contained">
-                View task
-              </Button>
-            </CardContent>
-            <Divider />
+          <Card
+            variant="outlined"
+            sx={{
+              p: 3,
+              background: `${theme.colors.alpha.black[5]}`
+            }}
+          >
+            <Box>
+              <Rating value={4} defaultValue={5} precision={1} readOnly />
+            </Box>
+            <Link href="#" variant="h3" color="text.primary">
+              Improve conversion rated by integrating new analytics tools
+            </Link>
+            <Box
+              sx={{
+                py: 2
+              }}
+            >
+              <Chip
+                sx={{
+                  mr: 0.5
+                }}
+                size="small"
+                label="Website"
+                color="secondary"
+                onClick={handleClick}
+                onDelete={handleDelete}
+              />
+              <Chip
+                sx={{
+                  mr: 0.5
+                }}
+                size="small"
+                label="Integrations"
+                color="secondary"
+                onClick={handleClick}
+                onDelete={handleDelete}
+              />
+            </Box>
+            <Typography
+              sx={{
+                pb: 2
+              }}
+              color="text.secondary"
+            >
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+              quae ab illo.
+            </Typography>
+            <Button size="small" variant="contained">
+              View task
+            </Button>
+            <Divider
+              sx={{
+                my: 2
+              }}
+            />
             <CardActions
               sx={{
-                p: 2,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between'
@@ -275,7 +325,11 @@ function TaskSearch() {
                 alignItems="center"
                 variant="subtitle2"
               >
-                <TodayTwoToneIcon sx={{ mr: 1 }} />
+                <TodayTwoToneIcon
+                  sx={{
+                    mr: 1
+                  }}
+                />
                 {formatDistance(subMonths(new Date(), 2), new Date(), {
                   addSuffix: true
                 })}
@@ -283,7 +337,10 @@ function TaskSearch() {
               <AvatarGroup>
                 <Tooltip arrow title="View profile for Remy Sharp">
                   <Avatar
-                    sx={{ width: 30, height: 30 }}
+                    sx={{
+                      width: 30,
+                      height: 30
+                    }}
                     component={RouterLink}
                     to="#"
                     alt="Remy Sharp"
@@ -292,19 +349,22 @@ function TaskSearch() {
                 </Tooltip>
                 <Tooltip arrow title="View profile for Travis Howard">
                   <Avatar
-                    sx={{ width: 30, height: 30 }}
+                    sx={{
+                      width: 30,
+                      height: 30
+                    }}
                     component={RouterLink}
                     to="#"
                     alt="Travis Howard"
                     src="/static/images/avatars/3.jpg"
                   />
                 </Tooltip>
-                <Tooltip
-                  arrow
-                  title="View profile for Trevor Henderson"
-                >
+                <Tooltip arrow title="View profile for Trevor Henderson">
                   <Avatar
-                    sx={{ width: 30, height: 30 }}
+                    sx={{
+                      width: 30,
+                      height: 30
+                    }}
                     component={RouterLink}
                     to="#"
                     alt="Trevor Henderson"
@@ -316,44 +376,65 @@ function TaskSearch() {
           </Card>
         </Grid>
         <Grid item xs={12} md={4}>
-          <Card>
-            <CardContent>
-              <Box>
-                <Rating value={4} defaultValue={5} precision={1} readOnly />
-              </Box>
-              <Link href="#" variant="h3" color="text.primary" underline="hover">
-                Increase the website speed on mobile and tablet devices
-              </Link>
-              <Box sx={{ py: 2 }}>
-                <Chip
-                  sx={{ mr: 0.5 }}
-                  size="small"
-                  label="Website"
-                  color="secondary"
-                  onClick={handleClick}
-                  onDelete={handleDelete}
-                />
-                <Chip
-                  sx={{ mr: 0.5 }}
-                  size="small"
-                  label="Integrations"
-                  color="secondary"
-                  onClick={handleClick}
-                  onDelete={handleDelete}
-                />
-              </Box>
-              <Typography sx={{ pb: 2 }} color="text.secondary">
-                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
-                aut fugit, sed quia consequuntur magni dolores eos qui ratione.
-              </Typography>
-              <Button size="small" variant="contained">
-                View task
-              </Button>
-            </CardContent>
-            <Divider />
+          <Card
+            variant="outlined"
+            sx={{
+              p: 3,
+              background: `${theme.colors.alpha.black[5]}`
+            }}
+          >
+            <Box>
+              <Rating value={4} defaultValue={5} precision={1} readOnly />
+            </Box>
+            <Link href="#" variant="h3" color="text.primary">
+              Increase the website speed on mobile and tablet devices
+            </Link>
+            <Box
+              sx={{
+                py: 2
+              }}
+            >
+              <Chip
+                sx={{
+                  mr: 0.5
+                }}
+                size="small"
+                label="Website"
+                color="secondary"
+                onClick={handleClick}
+                onDelete={handleDelete}
+              />
+              <Chip
+                sx={{
+                  mr: 0.5
+                }}
+                size="small"
+                label="Integrations"
+                color="secondary"
+                onClick={handleClick}
+                onDelete={handleDelete}
+              />
+            </Box>
+            <Typography
+              sx={{
+                pb: 2
+              }}
+              color="text.secondary"
+            >
+              Nemo enim ipsam voluptatem quia accusantium doloremque laudantium
+              voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
+              magni dolores eos qui ratione.
+            </Typography>
+            <Button size="small" variant="contained">
+              View task
+            </Button>
+            <Divider
+              sx={{
+                my: 2
+              }}
+            />
             <CardActions
               sx={{
-                p: 2,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between'
@@ -364,7 +445,11 @@ function TaskSearch() {
                 alignItems="center"
                 variant="subtitle2"
               >
-                <TodayTwoToneIcon sx={{ mr: 1 }} />
+                <TodayTwoToneIcon
+                  sx={{
+                    mr: 1
+                  }}
+                />
                 {formatDistance(subDays(new Date(), 31), new Date(), {
                   addSuffix: true
                 })}
@@ -372,7 +457,10 @@ function TaskSearch() {
               <AvatarGroup>
                 <Tooltip arrow title="View profile for Remy Sharp">
                   <Avatar
-                    sx={{ width: 30, height: 30 }}
+                    sx={{
+                      width: 30,
+                      height: 30
+                    }}
                     component={RouterLink}
                     to="#"
                     alt="Remy Sharp"
@@ -381,19 +469,22 @@ function TaskSearch() {
                 </Tooltip>
                 <Tooltip arrow title="View profile for Travis Howard">
                   <Avatar
-                    sx={{ width: 30, height: 30 }}
+                    sx={{
+                      width: 30,
+                      height: 30
+                    }}
                     component={RouterLink}
                     to="#"
                     alt="Travis Howard"
                     src="/static/images/avatars/2.jpg"
                   />
                 </Tooltip>
-                <Tooltip
-                  arrow
-                  title="View profile for Trevor Henderson"
-                >
+                <Tooltip arrow title="View profile for Trevor Henderson">
                   <Avatar
-                    sx={{ width: 30, height: 30 }}
+                    sx={{
+                      width: 30,
+                      height: 30
+                    }}
                     component={RouterLink}
                     to="#"
                     alt="Trevor Henderson"
@@ -406,7 +497,9 @@ function TaskSearch() {
         </Grid>
       </Grid>
       <Box
-        sx={{ py: 3 }}
+        sx={{
+          pt: 4
+        }}
         display="flex"
         alignItems="center"
         justifyContent="center"

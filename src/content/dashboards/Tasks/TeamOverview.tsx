@@ -1,5 +1,4 @@
 import {
-  Card,
   Box,
   Grid,
   Typography,
@@ -7,10 +6,9 @@ import {
   Badge,
   Tooltip,
   useTheme,
-  LinearProgress
+  LinearProgress,
+  styled
 } from '@mui/material';
-
-import { styled } from '@mui/material/styles';
 import { formatDistance, subDays, subMinutes, subHours } from 'date-fns';
 import Text from 'src/components/Text';
 
@@ -48,13 +46,12 @@ const LinearProgressWrapper = styled(LinearProgress)(
 );
 
 function TeamOverview() {
-
   const theme = useTheme();
 
   return (
-    <Grid container spacing={3}>
+    <Grid container spacing={4}>
       <Grid item xs={12} md={4}>
-        <Card sx={{ p: 2.5 }}>
+        <Box>
           <Box display="flex" alignItems="center" pb={3}>
             <Badge
               anchorOrigin={{
@@ -67,7 +64,8 @@ function TeamOverview() {
                   arrow
                   placement="top"
                   title={
-                    'Offline since ' + formatDistance(subDays(new Date(), 14), new Date(), {
+                    'Offline since ' +
+                    formatDistance(subDays(new Date(), 14), new Date(), {
                       addSuffix: true
                     })
                   }
@@ -83,7 +81,11 @@ function TeamOverview() {
                 src="/static/images/avatars/4.jpg"
               />
             </Badge>
-            <Box sx={{ ml: 1.5 }}>
+            <Box
+              sx={{
+                ml: 1.5
+              }}
+            >
               <Typography variant="h4" noWrap gutterBottom>
                 Hanna Siphron
               </Typography>
@@ -94,18 +96,18 @@ function TeamOverview() {
           </Box>
 
           <Typography variant="subtitle2" gutterBottom>
-            <Text color="black">4</Text> out of{' '}
-            <Text color="black">6</Text> tasks completed
+            <Text color="black">4</Text> out of <Text color="black">6</Text>{' '}
+            tasks completed
           </Typography>
           <LinearProgressWrapper
             value={65}
             color="primary"
             variant="determinate"
           />
-        </Card>
+        </Box>
       </Grid>
       <Grid item xs={12} md={4}>
-        <Card sx={{ p: 2.5 }}>
+        <Box>
           <Box display="flex" alignItems="center" pb={3}>
             <Badge
               anchorOrigin={{
@@ -118,7 +120,8 @@ function TeamOverview() {
                   arrow
                   placement="top"
                   title={
-                    'Online since ' + formatDistance(subMinutes(new Date(), 6), new Date(), {
+                    'Online since ' +
+                    formatDistance(subMinutes(new Date(), 6), new Date(), {
                       addSuffix: true
                     })
                   }
@@ -134,7 +137,11 @@ function TeamOverview() {
                 src="/static/images/avatars/3.jpg"
               />
             </Badge>
-            <Box sx={{ ml: 1.5 }}>
+            <Box
+              sx={{
+                ml: 1.5
+              }}
+            >
               <Typography variant="h4" noWrap gutterBottom>
                 Ann Saris
               </Typography>
@@ -145,18 +152,18 @@ function TeamOverview() {
           </Box>
 
           <Typography variant="subtitle2" gutterBottom>
-            <Text color="black">2</Text> out of{' '}
-            <Text color="black">8</Text> tasks completed
+            <Text color="black">2</Text> out of <Text color="black">8</Text>{' '}
+            tasks completed
           </Typography>
           <LinearProgressWrapper
             value={25}
             color="primary"
             variant="determinate"
           />
-        </Card>
+        </Box>
       </Grid>
       <Grid item xs={12} md={4}>
-        <Card sx={{ p: 2.5 }}>
+        <Box>
           <Box display="flex" alignItems="center" pb={3}>
             <Badge
               anchorOrigin={{
@@ -169,7 +176,8 @@ function TeamOverview() {
                   arrow
                   placement="top"
                   title={
-                    'Offline since ' + formatDistance(subHours(new Date(), 7), new Date(), {
+                    'Offline since ' +
+                    formatDistance(subHours(new Date(), 7), new Date(), {
                       addSuffix: true
                     })
                   }
@@ -185,7 +193,11 @@ function TeamOverview() {
                 src="/static/images/avatars/5.jpg"
               />
             </Badge>
-            <Box sx={{ ml: 1.5 }}>
+            <Box
+              sx={{
+                ml: 1.5
+              }}
+            >
               <Typography variant="h4" noWrap gutterBottom>
                 James Stanton
               </Typography>
@@ -196,15 +208,15 @@ function TeamOverview() {
           </Box>
 
           <Typography variant="subtitle2" gutterBottom>
-            <Text color="black">10</Text> out of{' '}
-            <Text color="black">20</Text> tasks completed
+            <Text color="black">10</Text> out of <Text color="black">20</Text>{' '}
+            tasks completed
           </Typography>
           <LinearProgressWrapper
             value={50}
             color="primary"
             variant="determinate"
           />
-        </Card>
+        </Box>
       </Grid>
     </Grid>
   );
